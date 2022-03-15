@@ -16,11 +16,7 @@ export default function LandingScreen() {
         <ViewWithLoading loading={false}>
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
-                    <LottieView
-                        source={require('../../assets/lottie/arcade.json')}
-                        autoPlay={true}
-                        loop={true}
-                    />
+                    
                 </View >
 
                 <View style={{

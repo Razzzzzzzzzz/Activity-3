@@ -9,9 +9,9 @@ export default function FooterLogin() {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Landing")}
+                onPress={() => navigation.navigate("SignUp")}
             >
-                <Text style={styles.textStyle}></Text>
+                <Text style={styles.textStyle}>Create your Account</Text>
             </TouchableOpacity>
         </View>
     );

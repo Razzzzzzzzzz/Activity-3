@@ -22,7 +22,7 @@ export default function LoginForm(props: IProps) {
 
 
     const loginSchema = yup.object({
-        username: yup.string().required('Username number is required'),
+        username: yup.string().required('Username is required'),
         password: yup.string().required('Password is required'),
     });
 
@@ -61,7 +61,20 @@ export default function LoginForm(props: IProps) {
                 }}
             >
                 {({ handleChange, handleSubmit, values, touched, errors }) => (
-                    <View style={{ flex: 0, width: '100%' }}>
+                    <View style={{ flex: 1, 
+                        width: '100%', 
+                        justifyContent: 'space-around',
+                        alignItems: 'flex-end',
+                        borderRadius:10,
+                        padding: 10,
+                        backgroundColor: '#252525', 
+                        }}>
+                            <Text style={{
+                              fontSize: 40,
+                              padding: 10,
+                              color: '#fff',
+                              fontFamily: 'space-mono'
+                            }}>Log In</Text>
                         <TextField
                             style={styles.textFieldStyle}
                             value={values.username}
@@ -103,40 +116,6 @@ export default function LoginForm(props: IProps) {
                             onPress={handleSubmit}
                             containerStyle={{ width: '90%', alignSelf: 'center', marginTop: 20 }}
                         />
-
-                        
-                        <View style={{
-                            marginTop: 25,
-                        }}>
-                            <Text style={{
-                            fontSize: 25,
-                            color: '#525454',
-                            textAlign: 'center',
-                            }}>
-                            -or-
-                        </Text>
-                        <Separator />
-                        <Button
-                            onPress={() => Alert.alert('Opening Google...')}
-                            title="Continue with Google"
-                            color="#171717"
-                            accessibilityLabel="Google"
-                        />
-                        <Separator />
-                        <Button
-                            onPress={() => Alert.alert('Opening Apple...')}
-                            title="Continue with Apple"
-                            color="#171717"
-                            accessibilityLabel="Google"
-                        />
-                        <Separator />
-                        <Button
-                            onPress={() => Alert.alert('Opening Facebook...')}
-                            title="Continue with Facebook"
-                            color="#171717"
-                            accessibilityLabel="Google"
-                        />
-                        </View>
                     </View>
                 )}
             </Formik>
